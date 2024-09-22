@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR.js GPS Demo</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.0.0/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <!-- AR.js Scene -->
+  <a-scene vr-mode-ui="false" embedded arjs="sourceType: webcam;">
+    
+    <!-- 카메라 및 GPS 지원 -->
+    <a-camera gps-camera rotation-reader></a-camera>
+
+    <!-- GPS 좌표에 3D 오브젝트 배치 -->
+    <a-entity gps-entity-place="latitude: 37.530742; longitude: 127.065224;" 
+              gltf-model="url(https://model3durl.com/yourmodel.gltf)" 
+              scale="1 1 1">
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
